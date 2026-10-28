@@ -1,0 +1,399 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Protest+Guerrilla&display=swap'); /* Imports the fonts used for headings and normal text from Google Fonts. */
+
+* { /* Includes padding and borders in the total size of each element. */
+  box-sizing: border-box;
+}
+
+html { /* Makes scrolling between page sections smooth. */
+  scroll-behavior: smooth;
+}
+
+body { /* Sets the main font, background colour and text colour of the page. */
+  margin: 0;
+  background-color: #e9e9e9;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #14181d;
+}
+
+.site-header { /* Centres the header and adds spacing around the logo and navigation. */
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 50px 20px 30px;
+  text-align: center;
+}
+
+.logo { /* Sets the logo width and adds space below it. */
+  width: 200px;
+  margin: 0 auto 50px;
+}
+
+.logo img { /* Makes the logo image fit inside its container. */
+  display: block;
+  width: 200px;
+  height: auto;
+}
+
+.navigation { /* Displays the navigation links in a horizontal row. */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+}
+
+.navigation a { /* Sets the colour and font size of the navigation links. */
+  color: #14181d;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.navigation a:hover { /* Underlines navigation links when the mouse moves over them. */
+  text-decoration: underline;
+}
+
+.content { /* Creates a centred white area for the article and album gallery. */
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 50px;
+  background-color: #ffffff;
+}
+
+h1,
+h2,
+h3 { /* Applies the Protest Guerrilla font to the main headings. */
+  font-family: 'Protest Guerrilla', sans-serif;
+  font-weight: normal;
+  text-align: left;
+  line-height: 1.2;
+}
+
+h1 { /* Makes the main article title larger than the other headings. */
+  font-size: clamp(48px, 6vw, 80px);
+  margin: 0 0 20px;
+}
+
+h2 { /* Sets second-level headings to 48px on desktop. */
+  font-size: 48px;
+  margin: 0;
+}
+
+h3 { /* Sets the size and spacing of smaller article headings. */
+  font-size: 48px;
+  margin: 0 0 20px;
+}
+
+.introduction { /* Makes the introduction text larger and adds space around it. */
+  text-align: left;
+  font-size: 22px;
+  line-height: 1.5;
+  margin: 30px 0 50px;
+}
+
+.article-columns { /* Divides the article text into three columns on desktop. */
+  column-count: 3;
+  column-gap: 50px;
+  text-align: left;
+}
+
+.article-columns section { /* Allows the text inside each section to flow between columns. */
+  display: contents;
+}
+
+.article-columns h3 { /* Tries to keep article headings with the text that follows them. */
+  break-after: avoid;
+}
+
+.article-columns p { /* Sets the font size and spacing of the article paragraphs. */
+  text-align: left;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0 0 20px;
+}
+
+.album-gallery { /* Arranges the album images in a grid with four columns. */
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  margin: 50px -50px -50px;
+}
+
+.album { /* Gives each album image a square area inside the gallery. */
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.album-featured { /* Makes the featured album cover occupy four grid spaces. */
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.album img { /* Makes album images fill their spaces without stretching. */
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.author-section { /* Places the author information, picture and social icons in a row. */
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 50px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.author-information { /* Allows the author information to use the available space. */
+  flex: 1;
+  min-width: 0;
+}
+
+.author-information h2 { /* Sets the font size and spacing of the author heading. */
+  font-size: 48px;
+  margin: 0 0 20px;
+}
+
+.author-information p { /* Sets the appearance of the author's description. */
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: left;
+  margin: 0;
+}
+
+.author-photo { /* Displays the author's profile picture as a circle. */
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.social-icons { /* Displays social media icons with 10px between them. */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.social-icons img { /* Sets each social media icon to 50px without stretching it. */
+  display: block;
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.author-socials .twitter-icon { /* Changes the light Twitter icon to a dark colour in the author section. */
+  filter: invert(1);
+}
+
+.author-socials { /* Displays the author's social media icons in a vertical column. */
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.comments-section { /* Creates a grey area for the comments below the author section. */
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 50px;
+  background-color: #e9e9e9;
+  border: 1px solid #bbbbbb;
+}
+
+.comments-section h2 { /* Sets the size of the Comments heading and adds space below it. */
+  font-size: 48px;
+  margin: 0 0 30px;
+}
+
+.comments-list { /* Displays comments vertically with 40px of space between them. */
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 650px;
+}
+
+.comment h3 { /* Makes usernames bold and adds space below each name. */
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.comment p { /* Sets the font size and line spacing of each comment. */
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: left;
+  margin: 0;
+}
+
+.site-footer { /* Creates a dark footer with white text at the bottom of the page. */
+  width: 100%;
+  background-color: #14181d;
+  color: #ffffff;
+  padding: 50px 20px;
+}
+
+.footer-inner { /* Centres the footer content and limits its width. */
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-navigation { /* Displays the footer navigation links in a horizontal row. */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.footer-navigation a { /* Makes footer navigation links white and removes their underlines. */
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.footer-navigation a:hover { /* Underlines footer links when the mouse moves over them. */
+  text-decoration: underline;
+}
+
+.footer-inner p { /* Sets the size and spacing of the copyright text. */
+  font-size: 14px;
+  margin: 0 0 30px;
+  line-height: 1.5;
+}
+
+.footer-socials { /* Centres the social media icons inside the footer. */
+  justify-content: center;
+}
+
+@media (max-width: 900px) { /* Adjusts the layout for tablet screens up to 900px wide. */
+
+  .article-columns { /* Changes the article from three columns to two columns. */
+    column-count: 2;
+    column-gap: 30px;
+  }
+
+  .content { /* Reduces the spacing inside the main content area. */
+    padding: 35px;
+  }
+
+  .album-gallery { /* Adjusts the album gallery to match the content spacing. */
+    margin: 35px -35px -35px;
+  }
+
+  .author-section { /* Reduces the spacing inside the author section. */
+    padding: 35px;
+    gap: 20px;
+  }
+
+  .comments-section { /* Reduces the spacing inside the comments section. */
+    padding: 35px;
+  }
+}
+
+@media (max-width: 600px) { /* Adjusts the website for mobile screens up to 600px wide. */
+
+  .site-header { /* Reduces the spacing around the mobile header. */
+    padding: 30px 15px;
+  }
+
+  .logo { /* Reduces the space below the logo on mobile. */
+    margin-bottom: 30px;
+  }
+
+  .navigation { /* Reduces the spacing between navigation links. */
+    gap: 10px;
+  }
+
+  .navigation a { /* Makes the navigation text smaller on mobile. */
+    font-size: 14px;
+  }
+
+  .content { /* Reduces the space around the main article content. */
+    padding: 25px 20px;
+  }
+
+  h1 { /* Makes the main title smaller and allows long words to wrap. */
+    font-size: 42px;
+    overflow-wrap: anywhere;
+  }
+
+  h2 { /* Makes second-level headings smaller on mobile. */
+    font-size: 26px;
+  }
+
+  h3 { /* Makes third-level headings smaller on mobile. */
+    font-size: 36px;
+  }
+
+  .introduction { /* Reduces the font size of the introduction. */
+    font-size: 18px;
+  }
+
+  .article-columns { /* Displays the article text in a single column. */
+    column-count: 1;
+  }
+
+  .album-gallery { /* Changes the album gallery to two columns on mobile. */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto;
+    margin: 25px -20px -25px;
+  }
+
+  .album-featured { /* Makes the featured album cover stretch across both columns. */
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .author-section { /* Places the author details and picture vertically on mobile. */
+    padding: 30px 20px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .author-information h2 { /* Centres the author heading and reduces its font size. */
+    text-align: center;
+    font-size: 36px;
+  }
+
+  .author-information p { /* Centres the author's description on mobile screens. */
+    text-align: center;
+  }
+
+  .author-socials { /* Displays the author's social media icons in a horizontal row. */
+    flex-direction: row;
+  }
+
+  .comments-section { /* Reduces the spacing around the comments section. */
+    padding: 30px 20px;
+  }
+
+  .comments-section h2 { /* Makes the Comments heading smaller on mobile. */
+    font-size: 36px;
+  }
+
+  .comments-list { /* Reduces the space between comments on mobile. */
+    gap: 25px;
+  }
+
+  .site-footer { /* Reduces the spacing inside the footer. */
+    padding: 35px 20px;
+  }
+
+  .footer-navigation { /* Reduces the spacing between footer navigation links. */
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+
+  .footer-navigation a { /* Makes footer navigation text smaller on mobile. */
+    font-size: 14px;
+  }
+}

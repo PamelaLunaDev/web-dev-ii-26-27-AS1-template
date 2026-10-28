@@ -1,0 +1,265 @@
+
+.site-header { /* Organises the header with the logo, navigation links and search button. */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+  background-color: var(--white);
+  border-bottom: 4px solid var(--black);
+}
+
+.site-logo { /* Sets the font, size and colour of the watch.it logo. */
+  margin: 0;
+  font-family: 'Teko', sans-serif;
+  font-size: 3em;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--black);
+}
+
+.site-navigation { /* Displays the movie categories in a horizontal row. */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+}
+
+.site-navigation a { /* Defines the appearance of the navigation links. */
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  color: var(--black);
+  text-decoration: none;
+}
+
+.search-button { /* Styles the search button using the watch.it brand colours. */
+  flex-shrink: 0;
+  padding: 16px;
+  border: 1px solid var(--black);
+  border-radius: 16px;
+  background-color: var(--turquoise);
+  color: var(--black);
+  font-family: 'Teko', sans-serif;
+  font-size: 2em;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.movies-container { /* Centres the movie content and limits its maximum width to 900px. */
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px;
+}
+
+.movies-grid { /* Creates two equal columns with space between the movie cards. */
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.movie-card { /* Gives each movie card a white background, border and shadow. */
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background-color: var(--white);
+  border: 1px solid var(--black);
+  box-shadow: 8px 8px 0 var(--black);
+  overflow: hidden;
+}
+
+.movie-poster { /* Displays movie posters as square images without cropping them. */
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  background-color: var(--white);
+}
+
+.movie-details { /* Arranges the movie description and button inside each card. */
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  min-width: 0;
+}
+
+.movie-description { /* Sets the font size, line spacing and colour of movie descriptions. */
+  flex: 1;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.5em;
+  line-height: 1.4;
+  color: var(--black);
+}
+
+.watch-button { /* Styles the WATCH NOW buttons with rounded corners and a yellow background. */
+  width: 100%;
+  padding: 16px;
+  border: 1px solid var(--black);
+  border-radius: 16px;
+  background-color: var(--yellow);
+  color: var(--black);
+  font-family: 'Teko', sans-serif;
+  font-size: 2em;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.movie-card.featured { /* Makes the first movie card stretch across both desktop columns. */
+  grid-column: 1 / -1;
+}
+
+.movie-card.featured .movie-poster { /* Keeps the Palm Springs poster square, centred and fully visible. */
+  width: min(100%, 460px);
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  margin: 16px auto 0;
+  background-color: var(--white);
+}
+
+.featured .movie-details { /* Places the featured movie description and button next to each other. */
+  flex-direction: row;
+  align-items: center;
+}
+
+.featured .movie-description { /* Allows the featured description to use the available space. */
+  flex: 1;
+}
+
+.featured .watch-button { /* Makes the featured movie button occupy 30% of the details area. */
+  width: 30%;
+  flex-shrink: 0;
+}
+
+.movie-card.horizontal { /* Displays the last three movie cards horizontally on desktop. */
+  grid-column: 1 / -1;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.horizontal .movie-poster { /* Makes the poster occupy half of each horizontal movie card. */
+  width: 50%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.horizontal .movie-details { /* Places the description and button in the other half of the card. */
+  width: 50%;
+  padding: 16px;
+}
+
+@media (min-width: 720px) and (max-width: 1023px) { /* Adjusts the website for tablet screens between 720px and 1023px. */
+
+  .site-navigation { /* Reduces the spacing between navigation links on tablets. */
+    gap: 32px;
+  }
+
+  .site-navigation a { /* Makes navigation text slightly smaller on tablets. */
+    font-size: 14px;
+  }
+
+  .movies-container { /* Uses 32px of spacing around the main content. */
+    padding: 32px;
+  }
+
+  .movies-grid { /* Displays the six movie cards in two equal columns. */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .movie-card,
+  .movie-card.featured,
+  .movie-card.horizontal { /* Changes all movie cards to a vertical layout. */
+    grid-column: auto;
+    flex-direction: column;
+  }
+
+  .movie-poster,
+  .movie-card.featured .movie-poster,
+  .horizontal .movie-poster { /* Makes all movie posters square and fully visible on tablets. */
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    margin: 0;
+  }
+
+  .movie-details,
+  .featured .movie-details,
+  .horizontal .movie-details { /* Places each movie description above its button. */
+    width: 100%;
+    flex: 1;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .watch-button,
+  .featured .watch-button { /* Makes all WATCH NOW buttons fill the width of their details area. */
+    width: 100%;
+  }
+}
+
+@media (max-width: 719px) { /* Adjusts the website for mobile screens smaller than 720px. */
+
+  .site-header { /* Adds spacing inside the mobile header. */
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .site-logo { /* Makes the watch.it logo smaller on mobile screens. */
+    font-size: 2em;
+  }
+
+  .site-navigation { /* Hides the movie categories to save space on mobile. */
+    display: none;
+  }
+
+  .movies-container { /* Uses 16px of spacing around the main content. */
+    padding: 16px;
+  }
+
+  .movies-grid { /* Displays all six movie cards in a single column. */
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .movie-card,
+  .movie-card.featured,
+  .movie-card.horizontal { /* Makes every movie card vertical on mobile. */
+    grid-column: auto;
+    flex-direction: column;
+  }
+
+  .movie-poster,
+  .movie-card.featured .movie-poster,
+  .horizontal .movie-poster { /* Displays square movie posters without cropping them on mobile. */
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    margin: 0;
+  }
+
+  .movie-details,
+  .featured .movie-details,
+  .horizontal .movie-details { /* Places movie descriptions above the buttons on mobile. */
+    width: 100%;
+    flex: 1;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .watch-button,
+  .featured .watch-button { /* Makes WATCH NOW buttons use the full available width. */
+    width: 100%;
+  }
+}

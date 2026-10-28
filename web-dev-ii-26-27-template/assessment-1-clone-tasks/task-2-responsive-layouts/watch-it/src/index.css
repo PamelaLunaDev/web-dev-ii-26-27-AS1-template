@@ -1,0 +1,37 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Teko:wght@400;500;600&display=swap'); /* Imports the Lato and Teko fonts from Google Fonts. */
+
+:root { /* Stores the official watch.it colours as CSS variables. */
+  --black: #070410;
+  --purple: #231651;
+  --turquoise: #4DCCBD;
+  --yellow: #EEF36A;
+  --white: #FFFFFF;
+
+  font-family: 'Lato', sans-serif;
+  color: var(--black);
+  background-color: var(--purple);
+}
+
+* { /* Includes padding and borders in the total size of each element. */
+  box-sizing: border-box;
+}
+
+html { /* Sets the minimum width of the webpage to 320px. */
+  min-width: 320px;
+}
+
+body { /* Removes the default margin and applies the main font and background colour. */
+  margin: 0;
+  min-width: 320px;
+  font-family: 'Lato', sans-serif;
+  background-color: var(--purple);
+}
+
+button { /* Makes buttons inherit the font settings from their parent element. */
+  font: inherit;
+}
+
+#root { /* Makes the main React container at least as tall as the browser window. */
+  min-height: 100vh;
+}

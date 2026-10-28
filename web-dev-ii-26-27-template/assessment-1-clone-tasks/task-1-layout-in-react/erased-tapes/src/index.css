@@ -1,0 +1,23 @@
+
+/* Includes padding and borders in the total size of each element. */
+* {
+  box-sizing: border-box;
+}
+
+/* Allows the webpage to use the full available width. */
+html {
+  width: 100%;
+}
+
+/* Removes the default margin and allows the body to fill the page. */
+body {
+  margin: 0;
+  min-width: 320px;
+  width: 100%;
+}
+
+/* Allows the main React container to use the full page width. */
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
